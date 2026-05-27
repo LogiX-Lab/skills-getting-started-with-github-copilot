@@ -173,6 +173,16 @@ Mapped use cases: **UC-001, UC-010, UC-013**
 - Technical architecture is approved.
 - Demo assumptions are explicit.
 
+### Phase 0 Verification (Executed)
+
+| Criterion | Status | Verification reference |
+| --- | --- | --- |
+| MVP workflow is frozen. | ✅ Verified | `Products-SCF/Ideation/Round002/Product Specifications.md` sections **4** and **7.1** define the supplier-issued workflow and transition baseline. |
+| State machine is documented. | ✅ Verified | `Products-SCF/Ideation/Round002/Product Specifications.md` sections **4** and **13.2** define value states and status values. |
+| Required entities and fields are identified. | ✅ Verified | `Products-SCF/Ideation/Round002/Product Specifications.md` sections **12.2** and **13.1** define core entities and required invoice fields. |
+| Technical architecture is approved. | ✅ Verified | `Products-SCF/Ideation/Round002/Product Specifications.md` sections **12.1** and **12.3** define components and Circle/USDC integration approach. |
+| Demo assumptions are explicit. | ✅ Verified | `Products-SCF/Ideation/Round002/Product Specifications.md` section **11** and `Products-Specs/Execution Plan.md` section **3** define stablecoin-first and phase deliverable assumptions. |
+
 ## 6. Phase 1: Invoice Truth and Buyer Acceptance
 
 ### Goal
