@@ -1,11 +1,11 @@
-# Mergington High School Activities API
+# Supply Chain Finance Portal API
 
-A super simple FastAPI application that allows students to view and sign up for extracurricular activities.
+A simple FastAPI application that allows suppliers, buyers, and investors to collaborate on supply chain finance opportunities.
 
 ## Features
 
-- View all available extracurricular activities
-- Sign up for activities
+- View all available financing opportunities
+- Join an opportunity as supplier, buyer, or investor
 
 ## Getting Started
 
@@ -27,24 +27,24 @@ A super simple FastAPI application that allows students to view and sign up for 
 
 ## API Endpoints
 
-| Method | Endpoint                                                          | Description                                                         |
-| ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
-| GET    | `/activities`                                                     | Get all activities with their details and current participant count |
-| POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
+| Method | Endpoint                                                               | Description                                                                  |
+| ------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| GET    | `/opportunities`                                                       | Get all opportunities with buyer/supplier context and participant data      |
+| POST   | `/opportunities/{opportunity_name}/join?email=user@company.com&role=investor` | Join a specific opportunity as supplier, buyer, or investor |
 
 ## Data Model
 
-The application uses a simple data model with meaningful identifiers:
+The application uses a simple in-memory data model with meaningful identifiers:
 
-1. **Activities** - Uses activity name as identifier:
+1. **Opportunities** - Uses purchase-order-like ID as identifier:
 
    - Description
-   - Schedule
+   - Buyer and supplier
+   - Invoice amount and discount rate
    - Maximum number of participants allowed
-   - List of student emails who are signed up
+   - List of participants with email and role
 
-2. **Students** - Uses email as identifier:
-   - Name
-   - Grade level
+2. **Participants** - Uses business email as identifier:
+   - Role (`supplier`, `buyer`, or `investor`)
 
 All data is stored in memory, which means data will be reset when the server restarts.

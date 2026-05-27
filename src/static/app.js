@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
 
-  // Function to fetch activities from API
+  // Function to fetch opportunities from API
   async function fetchActivities() {
     try {
-      const response = await fetch("/activities");
+      const response = await fetch("/opportunities");
       const activities = await response.json();
 
       // Clear loading message
@@ -23,8 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
         activityCard.innerHTML = `
           <h4>${name}</h4>
           <p>${details.description}</p>
-          <p><strong>Schedule:</strong> ${details.schedule}</p>
-          <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          <p><strong>Buyer:</strong> ${details.buyer}</p>
+          <p><strong>Supplier:</strong> ${details.supplier}</p>
+          <p><strong>Invoice Amount:</strong> $${details.invoice_amount.toLocaleString()}</p>
+          <p><strong>Discount Rate:</strong> ${details.discount_rate}%</p>
+          <p><strong>Availability:</strong> ${spotsLeft} participant slots left</p>
         `;
 
         activitiesList.appendChild(activityCard);
@@ -47,10 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const email = document.getElementById("email").value;
     const activity = document.getElementById("activity").value;
+    const role = document.getElementById("role").value;
 
     try {
       const response = await fetch(
-        `/activities/${encodeURIComponent(activity)}/signup?email=${encodeURIComponent(email)}`,
+        `/opportunities/${encodeURIComponent(activity)}/join?email=${encodeURIComponent(email)}&role=${encodeURIComponent(role)}`,
         {
           method: "POST",
         }
@@ -74,10 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.classList.add("hidden");
       }, 5000);
     } catch (error) {
-      messageDiv.textContent = "Failed to sign up. Please try again.";
+      messageDiv.textContent = "Failed to join opportunity. Please try again.";
       messageDiv.className = "error";
       messageDiv.classList.remove("hidden");
-      console.error("Error signing up:", error);
+      console.error("Error joining opportunity:", error);
     }
   });
 

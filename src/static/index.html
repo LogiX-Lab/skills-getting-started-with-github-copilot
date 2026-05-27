@@ -3,46 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mergington High School Activities</title>
+    <title>Supply Chain Finance Portal</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <h1>Supply Chain Finance Portal</h1>
+      <h2>Connect Suppliers, Buyers, and Investors</h2>
     </header>
 
     <main>
       <section id="activities-container">
-        <h3>Available Activities</h3>
+        <h3>Open Financing Opportunities</h3>
         <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
+          <!-- Opportunities will be loaded here -->
+          <p>Loading opportunities...</p>
         </div>
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3>Join as a Participant</h3>
         <form id="signup-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <label for="email">Business Email:</label>
+            <input type="email" id="email" required placeholder="name@company.com" />
           </div>
           <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
+            <label for="role">Participant Role:</label>
+            <select id="role" required>
+              <option value="">-- Select a role --</option>
+              <option value="supplier">Supplier</option>
+              <option value="buyer">Buyer</option>
+              <option value="investor">Investor</option>
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <div class="form-group">
+            <label for="activity">Select Opportunity:</label>
+            <select id="activity" required>
+              <option value="">-- Select an opportunity --</option>
+              <!-- Opportunity options will be loaded here -->
+            </select>
+          </div>
+          <button type="submit">Join Opportunity</button>
         </form>
         <div id="message" class="hidden"></div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2023 Mergington High School</p>
+      <p>&copy; 2026 Supply Chain Finance Portal</p>
     </footer>
 
     <script src="app.js"></script>
